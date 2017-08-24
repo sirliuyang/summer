@@ -3,43 +3,51 @@
  */
 package com.formula.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.formula.dao.UserDao;
 import com.formula.entity.User;
+import com.formula.repository.UserRepository;
 
 /**
- * @author Leon(Liu Yang)
- * Ideas from Formula Innovation
+ * @author Leon(Liu Yang) Ideas from Formula Innovation
  */
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
 	@Autowired
-	private UserDao userDao;
-	/* (non-Javadoc)
+	private UserRepository userRepository;
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.formula.service.UserService#getUsers()
 	 */
 	@Override
-	public List<User> getUsers() {
-		List<User> users = new ArrayList<User>();
-		User user = new User();
-		user.setId(1);
-		user.setName("Leon");
-		users.add(user);
-		return users;
+	public List<User> findAll() {
+		return (List<User>) userRepository.findAll();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see com.formula.service.UserService#getUserById()
 	 */
 	@Override
-	public User getUserById(int id) {
-		return userDao.findUserById();
+	public User findOneById(int id) {
+		return userRepository.findOne((long) id);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.formula.service.UserService#save()
+	 */
+	@Override
+	public void save(User user) {
+		userRepository.save(user);
 	}
 
 }

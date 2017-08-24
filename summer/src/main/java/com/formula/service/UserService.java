@@ -12,6 +12,7 @@ import com.formula.entity.User;
  * Ideas from Formula Innovation
  */
 public interface UserService {
-	public User getUserById(int id);
-	public List<User> getUsers();
+	public User findOneById(int id);
+	public List<User> findAll();
+	public void save(User user);
 }
