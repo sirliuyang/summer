@@ -32,9 +32,14 @@ public class UserController {
 	public User getUser(@PathVariable(value = "id") String userId) {
 		return userService.findOneById(Integer.parseInt(userId));
 	}
-	
-	@RequestMapping(method = RequestMethod.POST, value="/user")
-	public void addUser(@RequestBody User user){
+
+	@RequestMapping(method = RequestMethod.POST, value = "/user")
+	public void addUser(@RequestBody User user) {
 		userService.save(user);
+	}
+
+	@RequestMapping(method = RequestMethod.DELETE, value = "/user/{id}")
+	public void deleteUser(@PathVariable(value = "id") String userId) {
+		userService.remove(Integer.parseInt(userId));
 	}
 }

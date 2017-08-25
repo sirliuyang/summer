@@ -12,8 +12,10 @@ import com.formula.entity.User;
  * Ideas from Formula Innovation
  */
 public interface UserService {
-	public User findOneById(int id);
+	public User findOneById(long id);
 	public List<User> findAll();
 	public void save(User user);
+	public void update(User user);
+	public void remove(long id);
 	public boolean isValid(User user);
 }

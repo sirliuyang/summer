@@ -20,43 +20,39 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository userRepository;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.formula.service.UserService#getUsers()
-	 */
 	@Override
 	public List<User> findAll() {
 		return (List<User>) userRepository.findAll();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.formula.service.UserService#getUserById()
-	 */
 	@Override
-	public User findOneById(int id) {
-		return userRepository.findOne((long) id);
+	public User findOneById(long id) {
+		return userRepository.findOne(id);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.formula.service.UserService#save()
-	 */
 	@Override
 	public void save(User user) {
 		userRepository.save(user);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.formula.service.UserService#isValid(com.formula.entity.User)
-	 */
+	@Override
+	public void update(User user) {
+		userRepository.save(user);
+	}
+
 	@Override
 	public boolean isValid(User user) {
 		// TODO Auto-generated method stub
 		return true;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.formula.service.UserService#remove(long)
+	 */
+	@Override
+	public void remove(long id) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
