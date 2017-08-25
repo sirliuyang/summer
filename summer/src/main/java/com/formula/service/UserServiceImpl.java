@@ -50,4 +50,13 @@ public class UserServiceImpl implements UserService {
 		userRepository.save(user);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.formula.service.UserService#isValid(com.formula.entity.User)
+	 */
+	@Override
+	public boolean isValid(User user) {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
 }

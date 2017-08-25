@@ -15,4 +15,5 @@ public interface UserService {
 	public User findOneById(int id);
 	public List<User> findAll();
 	public void save(User user);
+	public boolean isValid(User user);
 }
