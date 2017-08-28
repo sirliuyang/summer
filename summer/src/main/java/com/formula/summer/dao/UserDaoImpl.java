@@ -1,11 +1,11 @@
 /**
  * 
  */
-package com.formula.dao;
+package com.formula.summer.dao;
 
 import org.springframework.stereotype.Repository;
 
-import com.formula.entity.User;
+import com.formula.summer.entity.User;
 
 /**
  * @author Leon(Liu Yang) Ideas from Formula Innovation

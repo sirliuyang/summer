@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.formula.advice;
+package com.formula.summer.advice;
 
 import org.apache.log4j.Logger;
 import org.aspectj.lang.JoinPoint;

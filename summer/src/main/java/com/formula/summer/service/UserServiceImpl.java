@@ -1,15 +1,15 @@
 /**
  * 
  */
-package com.formula.service;
+package com.formula.summer.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.formula.entity.User;
-import com.formula.repository.UserRepository;
+import com.formula.summer.entity.User;
+import com.formula.summer.repository.UserRepository;
 
 import lombok.extern.log4j.Log4j;
 

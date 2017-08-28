@@ -1,11 +1,11 @@
 /**
  * 
  */
-package com.formula.service;
+package com.formula.summer.service;
 
 import java.util.List;
 
-import com.formula.entity.User;
+import com.formula.summer.entity.User;
 
 /**
  * @author Leon(Liu Yang)

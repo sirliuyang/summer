@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.formula.entity;
+package com.formula.summer.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

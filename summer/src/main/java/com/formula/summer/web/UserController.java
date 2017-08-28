@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.formula.web;
+package com.formula.summer.web;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.formula.entity.User;
-import com.formula.service.UserService;
+import com.formula.summer.entity.User;
+import com.formula.summer.service.UserService;
 
 /**
  * @author Leon(Liu Yang) Ideas from Formula Innovation

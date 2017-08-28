@@ -1,11 +1,11 @@
 /**
  * 
  */
-package com.formula.repository;
+package com.formula.summer.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.formula.entity.User;
+import com.formula.summer.entity.User;
 
 /**
  * @author Leon(Liu Yang)
