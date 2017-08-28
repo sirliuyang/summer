@@ -19,8 +19,8 @@ import org.springframework.core.annotation.Order;
  * @author Leon(Liu Yang) Ideas from Formula Innovation
  */
 @Order(2)
-@WebFilter(filterName = "logging", urlPatterns = "/user/*")
-public class LogFilter implements Filter {
+@WebFilter(filterName = "usercheck", urlPatterns = "/user/*")
+public class UserFilter implements Filter {
 
 	/*
 	 * (non-Javadoc)
@@ -41,7 +41,6 @@ public class LogFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
 			throws IOException, ServletException {
-		System.out.println("Logging");
 		filterChain.doFilter(servletRequest, servletResponse);
 	}
 

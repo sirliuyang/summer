@@ -16,9 +16,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.core.annotation.Order;
 
+import lombok.extern.log4j.Log4j;
+
 /**
  * @author Leon(Liu Yang) Ideas from Formula Innovation
  */
+@Log4j
 @Order(1)
 @WebFilter(filterName = "loginFilter", urlPatterns = "/*")
 public class IdentityFilter implements Filter {
@@ -42,7 +45,7 @@ public class IdentityFilter implements Filter {
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
 			throws IOException, ServletException {
 		HttpServletResponse response = (HttpServletResponse) servletResponse;
-		System.out.println("Filtering");
+		log.info("Authenticating...");
 		//response.sendRedirect("/authenticate");
 		filterChain.doFilter(servletRequest, servletResponse);
 	}

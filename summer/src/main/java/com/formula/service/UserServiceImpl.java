@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import com.formula.entity.User;
 import com.formula.repository.UserRepository;
 
+import lombok.extern.log4j.Log4j;
+
 /**
  * @author Leon(Liu Yang) Ideas from Formula Innovation
  */
@@ -41,18 +43,12 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public void remove(long id) {
+		userRepository.delete(id);
+	}
+
+	@Override
 	public boolean isValid(User user) {
-		// TODO Auto-generated method stub
 		return true;
 	}
-
-	/* (non-Javadoc)
-	 * @see com.formula.service.UserService#remove(long)
-	 */
-	@Override
-	public void remove(long id) {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
