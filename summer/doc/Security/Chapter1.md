@@ -1,4 +1,4 @@
-# Architecture
+# Architecture And Workflow
 
 ### Servlets and Filters
 
@@ -7,14 +7,14 @@ Filter Chain: Authentication Filter
 ### Authentication Manager
 
 AuthenticationManager
-```sh
+```java
 public interface AuthenticationManager {
     Authentioncation authenticate(Authentication authentication)
 }
 ```
 
 Authentication
-```sh
+```java
 public interface Authentication extends Principal, Serializable {
     Collection<? extends GrantedAuthority> getAuthorities();
     Object getCredentials();
@@ -30,7 +30,7 @@ Before
 
 Authentication request
 
-```sh
+```
 isAuthenticated: False
 Principle: Username
 Credentials: Password
@@ -40,7 +40,7 @@ Authories:
 After
 
 Authentication principle
-```sh
+```
 isAuthenticated: True
 Principle: UserDetails
 Credentials: (removed)
@@ -52,7 +52,7 @@ Authories: Roles
 
 AuthenticationProvider
 
-```sh
+```java
 public interface AuthenticationProvider {
 
 	Authentication authenticate(Authentication authentication)
@@ -64,7 +64,7 @@ public interface AuthenticationProvider {
 
 UserDetails
 
-```sh
+```java
 public interface UserDetailsService {
 	UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
 }
@@ -79,12 +79,3 @@ public interface UserDetailsService {
 5. UserDetailsService: fill the Authentication
 6. AuthenticationFilter: stores at SecurityContextHolder->Security Context->Authenticated Principle
 
-
-
-### Configuration
-
-Spring has autoconfig package, and it has a spring.factories file which records:
-
-```
-security.servlet.UserDetailsServiceAutoConfiguration
-```
