@@ -14,6 +14,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletResponse;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.core.annotation.Order;
 
 import lombok.extern.log4j.Log4j;
@@ -21,7 +22,7 @@ import lombok.extern.log4j.Log4j;
 /**
  * @author Leon(Liu Yang) Ideas from Formula Innovation
  */
-@Log4j
+@Log4j2
 @Order(1)
 @WebFilter(filterName = "loginFilter", urlPatterns = "/*")
 public class IdentityFilter implements Filter {

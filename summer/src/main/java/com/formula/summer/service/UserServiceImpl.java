@@ -1,9 +1,10 @@
 /**
- * 
+ *
  */
 package com.formula.summer.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,36 +20,37 @@ import lombok.extern.log4j.Log4j;
 @Service
 public class UserServiceImpl implements UserService {
 
-	@Autowired
-	private UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
 
-	@Override
-	public List<User> findAll() {
-		return (List<User>) userRepository.findAll();
-	}
+    @Override
+    public List<User> findAll() {
+        return (List<User>) userRepository.findAll();
+    }
 
-	@Override
-	public User findOneById(long id) {
-		return userRepository.findOne(id);
-	}
+    @Override
+    public User findOneById(long id) {
+        Optional<User> result = userRepository.findById(id);
+        return result.orElse(null);
+    }
 
-	@Override
-	public void save(User user) {
-		userRepository.save(user);
-	}
+    @Override
+    public void save(User user) {
+        userRepository.save(user);
+    }
 
-	@Override
-	public void update(User user) {
-		userRepository.save(user);
-	}
+    @Override
+    public void update(User user) {
+        userRepository.save(user);
+    }
 
-	@Override
-	public void remove(long id) {
-		userRepository.delete(id);
-	}
+    @Override
+    public void remove(long id) {
+        userRepository.deleteById(id);
+    }
 
-	@Override
-	public boolean isValid(User user) {
-		return true;
-	}
+    @Override
+    public boolean isValid(User user) {
+        return true;
+    }
 }
