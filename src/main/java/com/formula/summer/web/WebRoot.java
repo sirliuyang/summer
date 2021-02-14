@@ -1,8 +1,6 @@
-/**
- * 
- */
 package com.formula.summer.web;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class WebRoot {
-	
-	@RequestMapping
-	public String welcome(){
-		return "Welcome";
-	}
+
+    @GetMapping
+    public String welcome() {
+        return "Welcome";
+    }
 }
