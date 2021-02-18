@@ -1,12 +1,12 @@
 package com.formula.summer.patterns.proxy;
 
-
-import org.springframework.cglib.proxy.Enhancer;
-import org.springframework.cglib.proxy.MethodInterceptor;
-import org.springframework.cglib.proxy.MethodProxy;
+import net.sf.cglib.proxy.Enhancer;
+import net.sf.cglib.proxy.MethodInterceptor;
+import net.sf.cglib.proxy.MethodProxy;
 
 import java.lang.reflect.Method;
 
+//https://www.jianshu.com/p/9a61af393e41?from=timeline&isappinstalled=0
 public class CglibProxy implements MethodInterceptor {
 
     public Object getInstance(final Object target) {

@@ -60,6 +60,12 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
+		<!-- Traditional Cglib -->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>3.3.0</version>
+		</dependency>
 		<!-- Code Automation -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
