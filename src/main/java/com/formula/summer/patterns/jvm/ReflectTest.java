@@ -16,7 +16,7 @@ public class ReflectTest {
         Class studentClass2 = Student.class;
         System.out.println(studentClass1 == studentClass2);
 
-        //第三种方式
+        //第三种方式, 反射方式
         try {
             Class studentClass3 = Class.forName("com.formula.summer.patterns.jvm.Student");
             System.out.println(studentClass2 == studentClass3);
