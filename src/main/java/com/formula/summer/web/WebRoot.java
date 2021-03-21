@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WebRoot {
 
-    @GetMapping
+    @GetMapping("/")
     public String welcome() {
         return "Welcome";
     }
