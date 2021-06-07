@@ -1,5 +1,6 @@
 package com.formula.summer.web;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,5 +15,10 @@ public class WebRoot {
     @GetMapping("/")
     public String welcome() {
         return "Welcome";
+    }
+
+    @DeleteMapping("/test")
+    public String testDel() {
+        return "Deleted";
     }
 }
